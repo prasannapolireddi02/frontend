@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AirGuard | Dashboard</title>
+
+    <link rel="stylesheet"
+          href="dashboard.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+========================================= -->
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <span class="brand-leaf">🌿</span>
+
+        <div>
+
+            <h1>AIR<span>GUARD</span></h1>
+
+            <p>Smart Air • Smart Health</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-right">
+
+        <span class="notification">
+            🔔
+        </span>
+
+
+        <!-- PROFILE BUTTON -->
+
+        <button
+            class="profile-button"
+            onclick="toggleProfile()">
+
+            <span class="profile-icon">
+                👤
+            </span>
+
+            <span id="profileName">
+                User
+            </span>
+
+            <span class="arrow">
+                ▼
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     PROFILE DROPDOWN
+========================================= -->
+
+<div
+    id="profilePanel"
+    class="profile-panel">
+
+    <div class="profile-header">
+
+        <div class="big-profile">
+            👤
+        </div>
+
+        <div>
+
+            <h3 id="panelName">
+                User
+            </h3>
+
+            <p id="panelEmail">
+                user@email.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <hr>
+
+
+    <div class="profile-detail">
+
+        <span>🎂</span>
+
+        <div>
+            <small>Age</small>
+            <p id="userAge">--</p>
+        </div>
+
+    </div>
+
+
+    <div class="profile-detail">
+
+        <span>⚧</span>
+
+        <div>
+            <small>Gender</small>
+            <p id="userGender">--</p>
+        </div>
+
+    </div>
+
+
+    <div class="profile-detail">
+
+        <span>📍</span>
+
+        <div>
+            <small>Location</small>
+            <p id="userLocation">--</p>
+        </div>
+
+    </div>
+
+
+    <div class="profile-detail">
+
+        <span>🫁</span>
+
+        <div>
+
+            <small>Health Conditions</small>
+
+            <p id="userDiseases">
+                None
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="logout-btn"
+        onclick="logout()">
+
+        🚪 Logout
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================================
+     MAIN DASHBOARD
+========================================= -->
+
+<main class="dashboard">
+
+
+    <!-- WELCOME -->
+
+    <section class="welcome">
+
+        <div>
+
+            <h2>
+                Good Day,
+                <span id="welcomeName">
+                    User
+                </span> 👋
+            </h2>
+
+            <p>
+                Here's your current air quality
+                and personalized health insight.
+            </p>
+
+        </div>
+
+
+        <button
+            class="refresh-btn"
+            onclick="refreshData()">
+
+            🔄 Refresh Data
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =====================================
+         LOCATION
+    ====================================== -->
+
+    <section class="location-card">
+
+        <div class="location-icon">
+            📍
+        </div>
+
+        <div>
+
+            <small>YOUR LOCATION</small>
+
+            <h3 id="location">
+                Hyderabad, India
+            </h3>
+
+            <p>
+                Real-time air quality monitoring
+            </p>
+
+        </div>
+
+
+        <div class="live">
+
+            <span></span>
+
+            LIVE
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         AQI MAIN CARD
+    ====================================== -->
+
+    <section class="aqi-section">
+
+
+        <div class="aqi-card">
+
+
+            <div class="aqi-header">
+
+                <div>
+
+                    <p class="label">
+                        CURRENT AIR QUALITY INDEX
+                    </p>
+
+                    <h1 id="aqiValue">
+                        72
+                    </h1>
+
+                    <h3 id="aqiStatus">
+                        Moderate
+                    </h3>
+
+                </div>
+
+
+                <div class="aqi-circle">
+
+                    <div>
+
+                        <strong id="aqiCircleValue">
+                            72
+                        </strong>
+
+                        <small>AQI</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="aqi-bar">
+
+                <div
+                    id="aqiProgress"
+                    class="aqi-progress">
+                </div>
+
+            </div>
+
+
+            <div class="aqi-scale">
+
+                <span>Good</span>
+
+                <span>Moderate</span>
+
+                <span>Unhealthy</span>
+
+                <span>Very Unhealthy</span>
+
+                <span>Hazardous</span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- STATUS CARD -->
+
+        <div class="status-card">
+
+            <div class="status-icon">
+                🌱
+            </div>
+
+            <h3 id="statusTitle">
+                Air Quality is Moderate
+            </h3>
+
+            <p id="statusMessage">
+
+                Air quality is acceptable.
+                Sensitive people should consider
+                reducing prolonged outdoor activity.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         POLLUTANTS
+    ====================================== -->
+
+    <section>
+
+        <div class="section-heading">
+
+            <div>
+
+                <h2>
+                    Pollutant Levels
+                </h2>
+
+                <p>
+                    Current concentration of major
+                    air pollutants
+                </p>
+
+            </div>
+
+            <span>
+                µg/m³
+            </span>
+
+        </div>
+
+
+        <div class="pollutant-grid">
+
+
+            <!-- PM2.5 -->
+
+            <div class="pollutant-card">
+
+                <div class="pollutant-top">
+
+                    <div class="pollutant-icon">
+                        🌫️
+                    </div>
+
+                    <span class="status-dot"></span>
+
+                </div>
+
+                <h3>PM2.5</h3>
+
+                <p>
+                    Fine Particulate Matter
+                </p>
+
+                <div class="pollutant-value">
+
+                    <strong id="pm25">
+                        35
+                    </strong>
+
+                    <span>
+                        µg/m³
+                    </span>
+
+                </div>
+
+                <div class="mini-bar">
+                    <div style="width:45%"></div>
+                </div>
+
+                <small>
+                    Moderate
+                </small>
+
+            </div>
+
+
+
+            <!-- PM10 -->
+
+            <div class="pollutant-card">
+
+                <div class="pollutant-top">
+
+                    <div class="pollutant-icon">
+                        💨
+                    </div>
+
+                    <span class="status-dot"></span>
+
+                </div>
+
+                <h3>PM10</h3>
+
+                <p>
+                    Coarse Particulate Matter
+                </p>
+
+                <div class="pollutant-value">
+
+                    <strong id="pm10">
+                        68
+                    </strong>
+
+                    <span>
+                        µg/m³
+                    </span>
+
+                </div>
+
+                <div class="mini-bar">
+                    <div style="width:55%"></div>
+                </div>
+
+                <small>
+                    Moderate
+                </small>
+
+            </div>
+
+
+
+            <!-- CO -->
+
+            <div class="pollutant-card">
+
+                <div class="pollutant-top">
+
+                    <div class="pollutant-icon">
+                        🏭
+                    </div>
+
+                    <span class="status-dot good"></span>
+
+                </div>
+
+                <h3>CO</h3>
+
+                <p>
+                    Carbon Monoxide
+                </p>
+
+                <div class="pollutant-value">
+
+                    <strong id="co">
+                        0.8
+                    </strong>
+
+                    <span>
+                        mg/m³
+                    </span>
+
+                </div>
+
+                <div class="mini-bar">
+                    <div style="width:25%"></div>
+                </div>
+
+                <small>
+                    Good
+                </small>
+
+            </div>
+
+
+
+            <!-- NO2 -->
+
+            <div class="pollutant-card">
+
+                <div class="pollutant-top">
+
+                    <div class="pollutant-icon">
+                        🧪
+                    </div>
+
+                    <span class="status-dot"></span>
+
+                </div>
+
+                <h3>NO₂</h3>
+
+                <p>
+                    Nitrogen Dioxide
+                </p>
+
+                <div class="pollutant-value">
+
+                    <strong id="no2">
+                        42
+                    </strong>
+
+                    <span>
+                        µg/m³
+                    </span>
+
+                </div>
+
+                <div class="mini-bar">
+                    <div style="width:40%"></div>
+                </div>
+
+                <small>
+                    Moderate
+                </small>
+
+            </div>
+
+
+
+            <!-- O3 -->
+
+            <div class="pollutant-card">
+
+                <div class="pollutant-top">
+
+                    <div class="pollutant-icon">
+                        ☁️
+                    </div>
+
+                    <span class="status-dot good"></span>
+
+                </div>
+
+                <h3>O₃</h3>
+
+                <p>
+                    Ozone
+                </p>
+
+                <div class="pollutant-value">
+
+                    <strong id="o3">
+                        48
+                    </strong>
+
+                    <span>
+                        µg/m³
+                    </span>
+
+                </div>
+
+                <div class="mini-bar">
+                    <div style="width:35%"></div>
+                </div>
+
+                <small>
+                    Good
+                </small>
+
+            </div>
+
+
+
+            <!-- SO2 -->
+
+            <div class="pollutant-card">
+
+                <div class="pollutant-top">
+
+                    <div class="pollutant-icon">
+                        🌋
+                    </div>
+
+                    <span class="status-dot good"></span>
+
+                </div>
+
+                <h3>SO₂</h3>
+
+                <p>
+                    Sulfur Dioxide
+                </p>
+
+                <div class="pollutant-value">
+
+                    <strong id="so2">
+                        12
+                    </strong>
+
+                    <span>
+                        µg/m³
+                    </span>
+
+                </div>
+
+                <div class="mini-bar">
+                    <div style="width:20%"></div>
+                </div>
+
+                <small>
+                    Good
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         HEALTH ADVISORY
+    ====================================== -->
+
+    <section class="advisory-section">
+
+
+        <div class="advisory-header">
+
+            <div>
+
+                <h2>
+                    🫁 Personalized Health Advisory
+                </h2>
+
+                <p>
+                    AI-generated recommendations based
+                    on current AQI and your health profile.
+                </p>
+
+            </div>
+
+            <span class="ai-badge">
+                🤖 AI Powered
+            </span>
+
+        </div>
+
+
+        <div class="advisory-content">
+
+
+            <div class="health-alert">
+
+                <div class="alert-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Moderate Air Quality
+                    </h3>
+
+                    <p>
+                        People with respiratory conditions
+                        may experience discomfort during
+                        prolonged outdoor exposure.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="advice-grid">
+
+
+                <div class="advice">
+
+                    <span>😷</span>
+
+                    <div>
+
+                        <h4>
+                            Protect Your Breathing
+                        </h4>
+
+                        <p>
+                            Consider using appropriate
+                            protection when air quality
+                            deteriorates.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="advice">
+
+                    <span>🏠</span>
+
+                    <div>
+
+                        <h4>
+                            Stay Indoors When Needed
+                        </h4>
+
+                        <p>
+                            Reduce prolonged outdoor
+                            exposure when AQI increases.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="advice">
+
+                    <span>🏃</span>
+
+                    <div>
+
+                        <h4>
+                            Reduce Outdoor Exercise
+                        </h4>
+
+                        <p>
+                            Avoid intense outdoor activity
+                            during poor air quality.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="advice">
+
+                    <span>💧</span>
+
+                    <div>
+
+                        <h4>
+                            Stay Hydrated
+                        </h4>
+
+                        <p>
+                            Maintain adequate hydration
+                            throughout the day.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         AQI PREDICTION
+    ====================================== -->
+
+    <section class="prediction-section">
+
+
+        <div>
+
+            <h2>
+                🤖 AQI Prediction
+            </h2>
+
+            <p>
+                Machine Learning based air quality forecast
+            </p>
+
+        </div>
+
+
+        <div class="prediction-card">
+
+            <div>
+
+                <small>
+                    NEXT 24 HOURS
+                </small>
+
+                <h2>
+                    84
+                </h2>
+
+                <span>
+                    Moderate
+                </span>
+
+            </div>
+
+
+            <div class="prediction-arrow">
+                →
+            </div>
+
+
+            <div>
+
+                <small>
+                    TOMORROW
+                </small>
+
+                <h2>
+                    68
+                </h2>
+
+                <span>
+                    Moderate
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <p>
+            🌿 AirGuard • Smart Air • Smart Health
+        </p>
+
+        <p>
+            Every Breath Matters
+        </p>
+
+    </footer>
+
+
+</main>
+
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>

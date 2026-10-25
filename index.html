@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AirGuard | Smart Air • Smart Health</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles"></div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <span class="leaf">🌿</span>
+
+            <div>
+                <h1>AIR<span>GUARD</span></h1>
+                <p>Smart Air • Smart Health</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#">Cleaner Air</a>
+            <a href="#">Healthier People</a>
+            <a href="#">Brighter Tomorrow</a>
+        </nav>
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- LEFT SECTION -->
+        <section class="left-section">
+
+            <div class="globe-container">
+                <div id="globe"></div>
+
+                <div class="glow-ring ring1"></div>
+                <div class="glow-ring ring2"></div>
+                <div class="glow-ring ring3"></div>
+
+                <!-- Floating Information Cards -->
+
+                <div class="info-card card1">
+                    <span>💨</span>
+                    <div>
+                        <b>Cleaner</b>
+                        <small>Air</small>
+                    </div>
+                </div>
+
+                <div class="info-card card2">
+                    <span>🌱</span>
+                    <div>
+                        <b>Healthier</b>
+                        <small>People</small>
+                    </div>
+                </div>
+
+                <div class="info-card card3">
+                    <span>🛡️</span>
+                    <div>
+                        <b>Safer</b>
+                        <small>Communities</small>
+                    </div>
+                </div>
+
+                <div class="info-card card4">
+                    <span>📊</span>
+                    <div>
+                        <b>Smart</b>
+                        <small>Prediction</small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="hero-text">
+                <h2>
+                    Breathe Today<br>
+                    for a Better <span>Tomorrow</span>
+                </h2>
+
+                <p>
+                    Real-Time Air Quality Insights
+                    <span>|</span>
+                    Personalized Health Advice
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN SECTION -->
+        <section class="login-section">
+
+            <div class="login-card">
+
+                <div class="mobile-logo">
+                    🌿
+                </div>
+
+                <h2>Welcome Back 👋</h2>
+
+                <p class="subtitle">
+                    Login to continue towards a healthier tomorrow.
+                </p>
+
+
+                <!-- LOGIN FORM -->
+                <form id="loginForm">
+
+                    <!-- EMAIL -->
+                    <div class="input-box">
+                        <span class="input-icon">✉</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="input-box">
+
+                        <span class="input-icon">🔒</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <span
+                            class="show-password"
+                            onclick="togglePassword()"
+                        >
+                            👁
+                        </span>
+
+                    </div>
+
+
+                    <div class="forgot">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button type="submit" class="login-btn">
+                        LOGIN
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <!-- DIVIDER -->
+                <div class="divider">
+                    <span></span>
+                    <p>OR</p>
+                    <span></span>
+                </div>
+
+
+                <!-- SOCIAL LOGIN -->
+                <button class="social-btn">
+                    <b>G</b>
+                    Continue with Google
+                </button>
+
+                <button class="social-btn">
+                    <b>▦</b>
+                    Continue with Microsoft
+                </button>
+
+
+                <!-- REGISTER -->
+                <p class="register">
+                    New user?
+                    <a href="register.html">Create Account</a>
+                </p>
+
+                <div class="bottom-text">
+                    Every Breath Matters 🌿
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

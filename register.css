@@ -1,0 +1,781 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff8f0,
+            #dff4ff,
+            #eefcf5
+        );
+
+    color: #123f5d;
+}
+
+
+/* ==================================
+   MAIN CONTAINER
+================================== */
+
+.page-container {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+}
+
+
+/* ==================================
+   LEFT SIDE
+================================== */
+
+.register-info {
+
+    padding: 60px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 160, 110, 0.95),
+            rgba(7, 106, 150, 0.95)
+        );
+
+    color: white;
+
+    position: sticky;
+
+    top: 0;
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.register-info::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255,255,255,0.2);
+
+    right: -250px;
+    top: 100px;
+}
+
+
+.register-info::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(255,255,255,0.15);
+
+    left: -200px;
+    bottom: -100px;
+}
+
+
+/* ==================================
+   BRAND
+================================== */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.brand > span {
+
+    font-size: 45px;
+}
+
+
+.brand h1 {
+
+    font-size: 32px;
+
+    letter-spacing: 1px;
+}
+
+
+.brand h1 span {
+
+    color: #9dffc8;
+}
+
+
+.brand p {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.85;
+}
+
+
+/* ==================================
+   INFO CONTENT
+================================== */
+
+.info-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 100px;
+}
+
+
+.info-content h2 {
+
+    font-size: 45px;
+
+    line-height: 1.2;
+}
+
+
+.info-content h2 span {
+
+    color: #a7ffcc;
+}
+
+
+.info-content > p {
+
+    margin-top: 20px;
+
+    line-height: 1.8;
+
+    max-width: 480px;
+
+    font-size: 15px;
+
+    opacity: 0.9;
+}
+
+
+/* ==================================
+   BENEFITS
+================================== */
+
+.benefit {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 35px;
+}
+
+
+.benefit > div:first-child {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    border-radius: 15px;
+
+    font-size: 25px;
+}
+
+
+.benefit h3 {
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+
+.benefit p {
+
+    font-size: 12px;
+
+    opacity: 0.75;
+}
+
+
+/* ==================================
+   QUOTE
+================================== */
+
+.quote {
+
+    position: absolute;
+
+    bottom: 45px;
+
+    left: 60px;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    opacity: 0.8;
+
+    z-index: 2;
+}
+
+
+/* ==================================
+   RIGHT SECTION
+================================== */
+
+.register-section {
+
+    padding: 45px 7%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* ==================================
+   CARD
+================================== */
+
+.register-card {
+
+    width: 700px;
+
+    padding: 40px;
+
+    background:
+        rgba(255,255,255,0.72);
+
+    backdrop-filter: blur(25px);
+
+    border: 1px solid
+        rgba(255,255,255,0.9);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(20,90,110,0.15);
+}
+
+
+/* ==================================
+   TITLE
+================================== */
+
+.register-card h2 {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    color: #123f5d;
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: #63808e;
+
+    font-size: 13px;
+
+    margin-top: 7px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==================================
+   SECTION TITLE
+================================== */
+
+.section-title {
+
+    font-size: 16px;
+
+    color: #087e62;
+
+    margin:
+
+        25px
+
+        0
+
+        15px;
+
+    padding-bottom: 8px;
+
+    border-bottom:
+        1px solid #d8e9e9;
+}
+
+
+/* ==================================
+   ROW
+================================== */
+
+.row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* ==================================
+   INPUT GROUP
+================================== */
+
+.input-group {
+
+    margin-bottom: 17px;
+}
+
+
+.input-group label,
+.other-disease label {
+
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #456b7d;
+
+    margin-bottom: 7px;
+}
+
+
+.input-group input,
+.input-group select,
+.input-group textarea,
+.other-disease input {
+
+    width: 100%;
+
+    border: 1px solid #d6e7ec;
+
+    outline: none;
+
+    border-radius: 12px;
+
+    padding: 13px 15px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    background:
+        rgba(255,255,255,0.85);
+
+    color: #244d61;
+
+    transition: 0.3s;
+}
+
+
+.input-group textarea {
+
+    resize: vertical;
+}
+
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus,
+.other-disease input:focus {
+
+    border-color: #0aa775;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(10,167,117,0.1);
+}
+
+
+/* ==================================
+   HEALTH NOTE
+================================== */
+
+.health-note {
+
+    font-size: 12px;
+
+    color: #708994;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==================================
+   DISEASE GRID
+================================== */
+
+.disease-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.disease-option {
+
+    cursor: pointer;
+}
+
+
+.disease-option input {
+
+    display: none;
+}
+
+
+.disease-option span {
+
+    display: block;
+
+    padding: 12px 10px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,255,255,0.7);
+
+    border: 1px solid #dcebed;
+
+    font-size: 12px;
+
+    text-align: center;
+
+    transition: 0.25s;
+}
+
+
+.disease-option span:hover {
+
+    border-color: #0baa76;
+
+    transform: translateY(-2px);
+}
+
+
+/* Selected */
+
+.disease-option input:checked + span {
+
+    background:
+        rgba(10,170,118,0.1);
+
+    border-color: #0aaa76;
+
+    color: #07845d;
+
+    font-weight: 600;
+}
+
+
+/* ==================================
+   OTHER DISEASE
+================================== */
+
+.other-disease {
+
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background:
+        rgba(10,170,118,0.06);
+
+    border-radius: 12px;
+
+    border: 1px dashed #0aaa76;
+}
+
+
+.other-disease.show {
+
+    display: block;
+
+    animation:
+        slideDown 0.3s ease;
+}
+
+
+@keyframes slideDown {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+/* ==================================
+   TERMS
+================================== */
+
+.terms {
+
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+
+    margin: 20px 0;
+
+    font-size: 12px;
+
+    color: #617d89;
+
+    cursor: pointer;
+}
+
+
+.terms input {
+
+    accent-color: #08a774;
+}
+
+
+/* ==================================
+   CREATE BUTTON
+================================== */
+
+.create-btn {
+
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0bad77,
+            #078e72
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(8,160,110,0.25);
+
+    transition: 0.3s;
+}
+
+
+.create-btn span {
+
+    margin-left: 10px;
+
+    font-size: 20px;
+}
+
+
+.create-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(8,160,110,0.35);
+}
+
+
+/* ==================================
+   LOGIN LINK
+================================== */
+
+.login-link {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    color: #64808c;
+}
+
+
+.login-link a {
+
+    color: #079d6b;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    margin-left: 5px;
+}
+
+
+/* ==================================
+   MOBILE LOGO
+================================== */
+
+.mobile-logo {
+
+    display: none;
+
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==================================
+   RESPONSIVE
+================================== */
+
+@media (max-width: 1100px) {
+
+    .page-container {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .register-info {
+
+        display: none;
+    }
+
+
+    .register-section {
+
+        padding: 30px 15px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .register-card {
+
+        padding: 25px 18px;
+
+        border-radius: 20px;
+    }
+
+
+    .mobile-logo {
+
+        display: block;
+    }
+
+
+    .register-card h2 {
+
+        font-size: 25px;
+    }
+
+
+    .row {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .disease-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
